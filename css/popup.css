@@ -1,0 +1,249 @@
+
+body {
+  margin-right: 3%;
+  margin-left:3%;
+}
+
+h1{
+  margin-bottom: 0;
+  font-family: "Work Sans";
+  font-size: 1.6em;
+  padding-bottom:0.5em;
+
+}
+
+
+
+#title a {
+  margin-bottom: 0;
+  font-family: "Work Sans";
+  color:black;
+  font-size: 1em;
+  padding-bottom:0.5em;
+}
+
+
+
+p {
+  margin-top: 3px;
+  margin-bottom: 2px;
+  font-family: "Work Sans";
+  width: 98%;
+  color: #252222;
+  text-align: justify;
+  text-overflow: ellipsis;
+  line-height: 1.5em;
+  }
+
+time {
+  position: absolute;
+  display: inline-block;
+  top: -3px;
+  right: 0;
+  font-size: 11px;
+  color: #282dffba;
+  font-family: "Work Sans";
+  font-weight: 900;
+  padding: 0.4em 0.7em;
+  margin: 0 0.3em 0.3em 0;
+  white-space: nowrap;
+  background-color: #282dff14;
+  border-radius: 3px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  list-style: none;
+  position: relative;
+  border-bottom: 1px solid #ececec;
+  padding-bottom: 5px;
+}
+
+
+
+
+
+ul li:last-child {
+  border-bottom-color: transparent;
+}
+
+
+
+/* Text when no result */
+
+.empty-states {
+  font-family: "Work Sans";
+  font-weight:bold;
+  color: #1bdca1;
+  margin-top:10px;
+}
+
+
+/* Search bar */
+
+.search { position: relative; }
+
+input {
+  width: 100%;
+  height: 2.7em;
+  padding: 0.5em;
+  -webkit-transition: width 0.2s ease-in-out;
+  transition: width 0.2s ease-in-out;
+  border-color:#0000001a;
+  border-style:solid;
+  caret-color:#1bdca1;
+  margin-left: -2px;
+  margin-right: -2px;
+  margin-bottom:10px;
+}
+
+#hits {
+  position: absolute;
+  right: 30px;
+  top: 7px;
+  color:#cbd0d5;
+  font-family: "Work Sans";
+}
+
+
+::placeholder {
+	color:#cbd0d5;
+  padding-left: 2px;
+  font-family: "Work Sans";
+  font-size:1.1em;
+}
+
+input:focus{
+  outline: none;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.sectors {
+  color: #282dffba;
+  font-family: "Work Sans";
+  font-weight: 900;
+  white-space: nowrap;
+  cursor:default;
+}
+
+
+/* Links */
+
+
+a {
+  text-decoration: none;
+  color:#1bdca1;
+  font-family:"Work Sans";
+
+
+}
+
+a:hover{
+  text-decoration: none;
+  border-bottom: solid;
+  border-bottom-color: #1bdca1;
+  transition: all 130ms ease-out;
+
+
+}
+
+span a {
+  color: #282dffba;
+  font-family: "Work Sans";
+  font-weight: 900;
+  white-space: nowrap;
+  cursor:default;
+}
+
+span a:hover {
+  color: #282dffba;
+  font-family: "Work Sans";
+  font-weight: 900;
+  white-space: nowrap;
+  cursor:default;
+  text-decoration: none;
+  border-bottom: solid;
+  border-bottom-color:  #282dffba;
+  border-width: 1px;
+  transition: all 0ms ease-out;
+}
+
+/* Sectors */
+
+
+
+
+
+
+/* Loader */
+
+
+
+
+/* @keyframes fadeIn { from { opacity:0; } to { opacity:1; } } */
+
+
+.loading {
+  text-align: center;
+  height: 400px;
+  width: 400px;
+  min-width: :400px;
+  min-height: 400px;
+}
+
+.loading::after {
+  margin-top: 50%;
+  margin-bottom: 100%;
+  content: "";
+  display: inline-block;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #1bdca1;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: donut-spin 1.2s linear infinite;
+}
+
+@keyframes donut-spin {
+  0% { transform: rotate(0deg);} 100% {transform: rotate(360deg);}
+}
+
+.loading #content { display: none; }
+
+
+.fadeout {
+  animation: fadeOut ease 4s;
+
+}
+
+@keyframes fadeOut {
+  0% {opacity: 100%;}   100% {opacity: 0%;}
+}
+
+
+/* body fadin */
+
+.fade-in{
+  animation: animationFrames ease 1.2s;
+  animation-iteration-count: 1;
+  transform-origin: 50% 50%;
+  animation-fill-mode:forwards; /*when the spec is finished*/
+
+
+}
+
+@keyframes animationFrames{
+  0% {
+    opacity:0;
+    transform:  translate(0px,10px)  ;
+  }
+  100% {
+    opacity:1;
+    transform:  translate(0px,0px)  ;
+  }
+}

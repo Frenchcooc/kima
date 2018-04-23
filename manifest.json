@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "Portfolio Kima",
+  "version": "0.0.6",
+  "description": "Helps you follow Kima's portfolio.",
+  "icons": {
+    "16": "img/logo_kima_16x16.png",
+    "128": "img/logo_kima_128x128.png"
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "img/logo_kima_16x16.png",
+      "32": "img/logo_kima_16x16.png"
+    },
+    "default_title": "Kima's popup",
+    "default_popup": "views/popup.html"
+  },
+  "background": {
+    "page": "views/background.html",
+    "persistent": true
+  },
+  "permissions": ["https://kaizens.io/", "notifications", "storage"]
+}
