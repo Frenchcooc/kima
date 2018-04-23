@@ -1,4 +1,3 @@
-
 body {
   margin-right: 3%;
   margin-left:3%;
@@ -9,10 +8,12 @@ h1{
   font-family: "Work Sans";
   font-size: 1.6em;
   padding-bottom:0.5em;
-
 }
 
-
+#new {
+  font-size: 0.6em;
+  color:#1bdca1de;
+}
 
 #title a {
   margin-bottom: 0;
@@ -21,8 +22,6 @@ h1{
   font-size: 1em;
   padding-bottom:0.5em;
 }
-
-
 
 p {
   margin-top: 3px;
@@ -33,12 +32,12 @@ p {
   text-align: justify;
   text-overflow: ellipsis;
   line-height: 1.5em;
-  }
+}
 
 time {
   position: absolute;
   display: inline-block;
-  top: -3px;
+  top: 1px;
   right: 0;
   font-size: 11px;
   color: #282dffba;
@@ -63,15 +62,9 @@ ul li {
   padding-bottom: 5px;
 }
 
-
-
-
-
 ul li:last-child {
   border-bottom-color: transparent;
 }
-
-
 
 /* Text when no result */
 
@@ -81,7 +74,6 @@ ul li:last-child {
   color: #1bdca1;
   margin-top:10px;
 }
-
 
 /* Search bar */
 
@@ -109,7 +101,6 @@ input {
   font-family: "Work Sans";
 }
 
-
 ::placeholder {
 	color:#cbd0d5;
   padding-left: 2px;
@@ -131,16 +122,12 @@ input:focus{
   cursor:default;
 }
 
-
 /* Links */
-
 
 a {
   text-decoration: none;
   color:#1bdca1;
   font-family:"Work Sans";
-
-
 }
 
 a:hover{
@@ -148,8 +135,6 @@ a:hover{
   border-bottom: solid;
   border-bottom-color: #1bdca1;
   transition: all 130ms ease-out;
-
-
 }
 
 span a {
@@ -173,20 +158,9 @@ span a:hover {
   transition: all 0ms ease-out;
 }
 
-/* Sectors */
-
-
-
-
-
-
 /* Loader */
 
-
-
-
 /* @keyframes fadeIn { from { opacity:0; } to { opacity:1; } } */
-
 
 .loading {
   text-align: center;
@@ -215,16 +189,13 @@ span a:hover {
 
 .loading #content { display: none; }
 
-
 .fadeout {
   animation: fadeOut ease 4s;
-
 }
 
 @keyframes fadeOut {
   0% {opacity: 100%;}   100% {opacity: 0%;}
 }
-
 
 /* body fadin */
 
@@ -233,8 +204,6 @@ span a:hover {
   animation-iteration-count: 1;
   transform-origin: 50% 50%;
   animation-fill-mode:forwards; /*when the spec is finished*/
-
-
 }
 
 @keyframes animationFrames{
