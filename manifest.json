@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Portfolio Kima",
-  "version": "0.0.6",
+  "name": "Portfolio",
+  "version": "0.0.7",
   "description": "Helps you follow Kima's portfolio.",
   "icons": {
     "16": "img/logo_kima_16x16.png",
