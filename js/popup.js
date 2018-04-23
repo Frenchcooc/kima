@@ -61,7 +61,7 @@ function show (query)
 
   var hits = 0;
   var referenceDate = new Date('2018-04-06')
-  var thirtyDays = new Date().getTime() - (30 * 24 * 60 * 60 * 1000)
+  var sevenDays = new Date().getTime() - (7 * 24 * 60 * 60 * 1000)
 
   for (var i = 0 ; i < companies.length ; i++)
   {
@@ -76,7 +76,14 @@ function show (query)
       { continue; }
 
     list += "<li>";
-    list += "<h1><a href=\"" + company.url + "\" target=\"blank\">"+company.name+"</a></h1>";
+
+    if (company.date > referenceDate && company.date > sevenDays ) {
+      list += "<h1><a href=\"" + company.url + "\" target=\"blank\">"+company.name+"</a><span></span><span id=\"new\"> new </span></h1>";
+    }
+    else {
+      list += "<h1><a href=\"" + company.url + "\" target=\"blank\">"+company.name+"</a></h1>";
+    }
+
 
      if (company.sector.length>0){
 
@@ -93,7 +100,7 @@ function show (query)
         }
         else {
           list +="<span class=\"sectors\" id="+company.sector[j].name+">";
-          list += "<a>"
+          list += "<a href=\"#"+company.sector[j].name+"\">"
           list += company.sector[j].name;
           list += "</a>"
           list += "</span>";
@@ -107,10 +114,10 @@ function show (query)
     // 2) the date is known and > 30 days, displays the full date
     // if unknown, then reference date is 06/04/18, then displays N/A
 
-    if (company.date > referenceDate && company.date > thirtyDays ) {
-      list += "<time> NEW - "+company.date.toLocaleString("fr-FR",{year: "numeric", month: "numeric", day: "numeric"})+"</time>";
+    if (company.date > referenceDate && company.date > sevenDays ) {
+      list += "<time>"+company.date.toLocaleString("fr-FR",{year: "numeric", month: "numeric", day: "numeric"})+"</time>";
     }
-    if (company.date && company.date < thirtyDays ) {
+    if (company.date > referenceDate && company.date < sevenDays ) {
       list += "<time>"+company.date.toLocaleString("fr-FR",{year: "numeric", month: "numeric", day: "numeric"})+"</time>";
     }
     if (company.date < referenceDate) {
@@ -148,5 +155,6 @@ function searchSector (e)
 {
   e.preventDefault();
   document.getElementById('search').value = 'sector:' + this.innerHTML.toLowerCase();
+  scroll(0,0)
   search();
 }
