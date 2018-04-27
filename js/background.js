@@ -50,7 +50,7 @@ function saveNewCompany (company, isNew)
       { notifyNewCompany(company); }
   });
 
-  console.info('Saving invest - ' + company.name + (isNew ? ' - new' : ''));
+  //console.info('Saving invest - ' + company.name + (isNew ? ' - new' : ''));
 };
 
 function notifyNewCompany (company)
