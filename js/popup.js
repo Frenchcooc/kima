@@ -11,7 +11,7 @@ chrome.storage.local.get(null, function (items) {
     if (!company.id)
       { return; }
 
-    company.date = new Date(company.date);
+    company.date = (company.date ? new Date(company.date) : false);
     company.sector_string = company.sector.map(function(c) { return c.name; }).join();
     companies.push(company);
   });
