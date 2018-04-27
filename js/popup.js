@@ -58,7 +58,6 @@ function show (query)
   }
 
   var hits = 0;
-  var referenceDate = new Date('2018-04-06')
   var sevenDays = new Date().getTime() - (7 * 24 * 60 * 60 * 1000)
 
   for (var i = 0 ; i < companies.length ; i++)
@@ -75,8 +74,10 @@ function show (query)
 
     list += "<li>";
 
-    if (company.date > referenceDate && company.date > sevenDays ) {
-      list += "<h1><a href=\"" + company.url + "\" target=\"blank\">"+company.name+"</a><span></span><span class=\"new\"> new </span></h1>";
+    if (company.date) {
+      list += "<h1><a href=\"" + company.url + "\" target=\"blank\">"+company.name+"</a>";
+      list += (company.date > sevenDays) ? "<span class=\"new\">new</span>" : "";
+      list += "</h1>";
     }
     else {
       list += "<h1><a href=\"" + company.url + "\" target=\"blank\">"+company.name+"</a></h1>";
@@ -112,14 +113,8 @@ function show (query)
     // 2) the date is known and > 30 days, displays the full date
     // if unknown, then reference date is 06/04/18, then displays N/A
 
-    if (company.date > referenceDate && company.date > sevenDays ) {
+    if (company.date) {
       list += "<time>"+company.date.toLocaleString("fr-FR",{year: "numeric", month: "numeric", day: "numeric"})+"</time>";
-    }
-    if (company.date > referenceDate && company.date < sevenDays ) {
-      list += "<time>"+company.date.toLocaleString("fr-FR",{year: "numeric", month: "numeric", day: "numeric"})+"</time>";
-    }
-    if (company.date < referenceDate) {
-      // list += "<time>N/A</time>";
     }
 
     list += "</li>";
