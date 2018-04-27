@@ -1,3 +1,4 @@
+
 body {
   margin-right: 3%;
   margin-left:3%;
@@ -8,14 +9,14 @@ h1{
   font-family: "Work Sans";
   font-size: 1.6em;
   padding-bottom:0.5em;
+
 }
 
 #new {
   font-size: 0.6em;
   color:#1bdca1de;
 }
-
-#title a {
+title a {
   margin-bottom: 0;
   font-family: "Work Sans";
   color:black;
@@ -61,6 +62,10 @@ ul li {
   border-bottom: 1px solid #ececec;
   padding-bottom: 5px;
 }
+
+
+
+
 
 ul li:last-child {
   border-bottom-color: transparent;
@@ -118,11 +123,13 @@ input:focus{
   color: #282dffba;
   font-family: "Work Sans";
   font-weight: 900;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   cursor:default;
 }
 
+
 /* Links */
+
 
 a {
   text-decoration: none;
@@ -160,8 +167,6 @@ span a:hover {
 
 /* Loader */
 
-/* @keyframes fadeIn { from { opacity:0; } to { opacity:1; } } */
-
 .loading {
   text-align: center;
   height: 400px;
@@ -196,6 +201,7 @@ span a:hover {
 @keyframes fadeOut {
   0% {opacity: 100%;}   100% {opacity: 0%;}
 }
+
 
 /* body fadin */
 
