@@ -3,8 +3,6 @@ var companies;
 chrome.storage.local.get(null, function (items) {
 
   var list = "";
-  var limit = 10;
-
   companies = [];
 
   Object.keys(items).forEach(function (item) {
