@@ -2,11 +2,11 @@
 body {
   margin-right: 3%;
   margin-left:3%;
+  font-family: "Work Sans", Arial, sans-serif;
 }
 
 h1{
   margin-bottom: 0;
-  font-family: "Work Sans";
   font-size: 1.6em;
   padding-bottom:0.5em;
 
@@ -18,7 +18,6 @@ h1{
 }
 title a {
   margin-bottom: 0;
-  font-family: "Work Sans";
   color:black;
   font-size: 1em;
   padding-bottom:0.5em;
@@ -27,7 +26,6 @@ title a {
 p {
   margin-top: 3px;
   margin-bottom: 2px;
-  font-family: "Work Sans";
   width: 98%;
   color: #252222;
   text-align: justify;
@@ -42,7 +40,6 @@ time {
   right: 0;
   font-size: 11px;
   color: #282dffba;
-  font-family: "Work Sans";
   font-weight: 900;
   padding: 0.4em 0.7em;
   margin: 0 0.3em 0.3em 0;
@@ -74,7 +71,6 @@ ul li:last-child {
 /* Text when no result */
 
 .empty-states {
-  font-family: "Work Sans";
   font-weight:bold;
   color: #1bdca1;
   margin-top:10px;
@@ -103,13 +99,11 @@ input {
   right: 30px;
   top: 7px;
   color:#cbd0d5;
-  font-family: "Work Sans";
 }
 
 ::placeholder {
 	color:#cbd0d5;
   padding-left: 2px;
-  font-family: "Work Sans";
   font-size:1.1em;
 }
 
@@ -121,7 +115,6 @@ input:focus{
 
 .sectors {
   color: #282dffba;
-  font-family: "Work Sans";
   font-weight: 900;
   /* white-space: nowrap; */
   cursor:default;
@@ -134,7 +127,6 @@ input:focus{
 a {
   text-decoration: none;
   color:#1bdca1;
-  font-family:"Work Sans";
 }
 
 a:hover{
@@ -146,7 +138,6 @@ a:hover{
 
 span a {
   color: #282dffba;
-  font-family: "Work Sans";
   font-weight: 900;
   white-space: nowrap;
   cursor:default;
@@ -154,7 +145,6 @@ span a {
 
 span a:hover {
   color: #282dffba;
-  font-family: "Work Sans";
   font-weight: 900;
   white-space: nowrap;
   cursor:default;
