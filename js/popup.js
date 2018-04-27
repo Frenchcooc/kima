@@ -78,7 +78,7 @@ function show (query)
     list += "<li>";
 
     if (company.date > referenceDate && company.date > sevenDays ) {
-      list += "<h1><a href=\"" + company.url + "\" target=\"blank\">"+company.name+"</a><span></span><span id=\"new\"> new </span></h1>";
+      list += "<h1><a href=\"" + company.url + "\" target=\"blank\">"+company.name+"</a><span></span><span class=\"new\"> new </span></h1>";
     }
     else {
       list += "<h1><a href=\"" + company.url + "\" target=\"blank\">"+company.name+"</a></h1>";
