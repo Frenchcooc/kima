@@ -116,5 +116,5 @@ function initialize ()
 /*
  * It starts here
  */
-chrome.storage.local.clear();
+
 initialize();
