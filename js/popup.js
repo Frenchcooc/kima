@@ -100,7 +100,7 @@ function show (query)
         }
         else {
           list +="<span class=\"sectors\" id="+company.sector[j].name+">";
-          list += "<a href=\"#"+company.sector[j].name+"\">"
+          list += "<a href=\"#"+company.sector[j].name.replace(' ', '')+"\">"
           list += company.sector[j].name;
           list += "</a>"
           list += "</span>";
