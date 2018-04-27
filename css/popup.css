@@ -12,6 +12,7 @@ h1 {
 }
 
 .new {
+  padding-left: 5px;
   font-size: 0.6em;
   color:#1bdca1de;
 }
