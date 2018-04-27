@@ -30,14 +30,13 @@ function handlePorfolio (companies)
     // More on chrome.storage at: https://developer.chrome.com/apps/storage
     var company = companies[id];
     chrome.storage.local.get(company.id, function (items) {
-      if (!Object.keys(items).length) {
-        saveNewCompany(company);
-      }
+      var isNew = (!Object.keys(items).length);
+      saveNewCompany(company, isNew);
     })
   });
 }
 
-function saveNewCompany (company)
+function saveNewCompany (company, isNew)
 {
   if (!company || !Object.keys(company).length)
     { console.error('Company is empty'); }
@@ -47,10 +46,11 @@ function saveNewCompany (company)
 
   // More on chrome.storage at: https://developer.chrome.com/apps/storage
   chrome.storage.local.set(storage, function () {
-    notifyNewCompany(company);
+    if (isNew)
+      { notifyNewCompany(company); }
   });
 
-  console.info('Saving new invest - ' + company.name + '- ' + company);
+  console.info('Saving invest - ' + company.name + (isNew ? ' - new' : ''));
 };
 
 function notifyNewCompany (company)
@@ -68,7 +68,7 @@ function notifyNewCompany (company)
 
   chrome.notifications.create(notification_id, notification_options);
 
-  console.info('Notifying new invest - ' + company.name + '- ' + company);
+  console.info('Notifying new invest - ' + company.name);
 }
 
 function notificationEventListener ()
@@ -85,7 +85,6 @@ function notificationEventListener ()
 
 function initialize ()
 {
-  //chrome.storage.local.clear();
   chrome.storage.local.get(
     'installation_date',
     function (items)
@@ -94,13 +93,19 @@ function initialize ()
       {
         chrome.storage.local.set(
           {'installation_date': (new Date()).toISOString()},
-          function () { fetchPortfolio();}
+          function () {
+            fetchPortfolio();
+            // re-initialize every in 1 hour
+            setTimeout(initialize, HOUR);
+          }
         );
       }
       else
       {
         NOTIFICATION_ACTIVE = true;
         fetchPortfolio();
+        // re-fetchPortfolio every half day
+        setInterval(fetchPortfolio, HALF_DAY);
       }
     }
   );
@@ -111,8 +116,5 @@ function initialize ()
 /*
  * It starts here
  */
-
+chrome.storage.local.clear();
 initialize();
-
-// re-fetchPortfolio every half day
-setTimeout(fetchPortfolio, HALF_DAY);
