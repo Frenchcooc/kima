@@ -20,7 +20,7 @@ chrome.storage.local.get(null, function (items) {
   companies = companies.sort(function (a,b) { return b.date - a.date; });
 
   var html = "<div id=\"content\">"
-      html += "<h1 id=\"title\"> <a href=\"https://www.kimaventures.com\" title=\"kimaventures.com\" target=\"_blank\">Kima's latest deals</a></h1>";
+      html += "<h1> <a href=\"https://www.kimaventures.com\" id=\"title\" title=\"kimaventures.com\" target=\"_blank\">Kima's latest deals</a></h1>";
       html += "<div class=\"search\">"
       html += "<input id=\"search\" type=\"search\" autocomplete=\"off\" placeholder=\"Browse the "+companies.length+" companies\" incremental=\"true\">";
       html += "<span id=\"hits\"></span>"
