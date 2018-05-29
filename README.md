@@ -8,4 +8,4 @@ Download repository, unpack .zip then [install the extension as unpacked](https:
 https://www.kimaventures.com/portfolio/
 
 ## Authors
-[@jdubrulle](https://github.com/jdubrulle) (@frenchcooc](https://github.com/frenchcooc)
+[@jdubrulle](https://github.com/jdubrulle) [@frenchcooc](https://github.com/frenchcooc)
