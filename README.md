@@ -6,3 +6,6 @@ Download repository, unpack .zip then [install the extension as unpacked](https:
 
 ## Data source
 https://www.kimaventures.com/portfolio/
+
+## Authors
+@jdubrulle @frenchcooc
