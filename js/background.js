@@ -2,7 +2,7 @@
  * PARAMS
  */
 
-var API_URL = "https://www.kaizens.io/kima.json";
+var API_URL = "https://vcportfolio.info/kima.json";
 
 var SECOND   = 1000;
 var MINUTE   = SECOND * 60;

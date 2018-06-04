@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "Portfolio Kima",
-  "version": "0.0.8.1",
+  "name": "Kima's portfolio tracker",
+  "version": "0.0.9",
   "description": "Helps you follow Kima's portfolio",
   "icons": {
     "16": "img/logo_kima_16x16.png",
@@ -20,5 +20,5 @@
     "page": "views/background.html",
     "persistent": true
   },
-  "permissions": ["https://kaizens.io/", "notifications", "storage"]
+  "permissions": ["https://vcportfolio.info/", "notifications", "storage"]
 }
