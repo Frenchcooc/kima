@@ -2,21 +2,20 @@ var companies;
 
 chrome.storage.local.get(null, function (items) {
 
-  var list = "";
   companies = [];
 
   Object.keys(items).forEach(function (item) {
     var company = items[item];
 
-    if (!company.id)
-      { return; }
+    if (!company.id) { return; }
+    if (!company.sectors) { company.sectors = []; }
 
     company.date = (company.date ? new Date(company.date) : false);
-    company.sector_string = company.sector.map(function(c) { return c.name; }).join();
+    if (company.date && isNaN(company.date)) { company.date = false; }
+    company.sector_string = company.sectors.join();
     companies.push(company);
   });
 
-  companies = companies.sort(function(a, b){return 0.5 - Math.random()});
   companies = companies.sort(function (a,b) { return b.date - a.date; });
 
   var html = "<div id=\"content\">"
@@ -63,15 +62,14 @@ function show (query)
   for (var i = 0 ; i < companies.length ; i++)
   {
     var company = companies[i];
-    var sectorsField = [];
 
-    if (regexCategory && !company.sector.length)
+    if (regexCategory && company.sectors.length < 1)
       { continue; }
     else if (regexCategory && !company.sector_string.match(regexCategory))
       { continue; }
     else if (!regexCategory && query && !company.name.toString().match(regex))
       { continue; }
-
+    
     list += "<li>";
 
     if (company.date) {
@@ -84,23 +82,23 @@ function show (query)
     }
 
 
-     if (company.sector.length>0){
+     if (company.sectors.length>0){
 
-      for (var j=0; j < company.sector.length; j++) {
+      for (var j=0; j < company.sectors.length; j++) {
 
-        if (j != company.sector.length - 1){
-          list +="<span class=\"sectors\" id="+company.sector[j].name+">";
-          list += "<a href=\"#"+company.sector[j].name+"\">"
-          list += company.sector[j].name;
+        if (j != company.sectors.length - 1){
+          list +="<span class=\"sectors\" id="+company.sectors[j]+">";
+          list += "<a href=\"#"+company.sectors[j]+"\">"
+          list += company.sectors[j];
           list += "</a>"
           list += " - ";
           list += "</span>";
 
         }
         else {
-          list +="<span class=\"sectors\" id="+company.sector[j].name+">";
-          list += "<a href=\"#"+company.sector[j].name.replace(' ', '')+"\">"
-          list += company.sector[j].name;
+          list +="<span class=\"sectors\" id="+company.sectors[j]+">";
+          list += "<a href=\"#"+company.sectors[j].replace(' ', '')+"\">"
+          list += company.sectors[j];
           list += "</a>"
           list += "</span>";
           }
