@@ -80,7 +80,9 @@ function notificationEventListener() {
       for (var item in items) {
         var company = items[item]
         console.log('Opening: ' + company.url)
-        chrome.tabs.create({ url: company.url })
+        chrome.tabs.create({
+          url: company.url + '?utm_source=chrome&utm_medium=addon&utm_campaign=kima-portfolio-tracker'
+        })
         break
       }
     })
