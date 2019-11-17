@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Kima's portfolio tracker",
-  "version": "0.2",
+  "version": "0.3",
   "description": "Helps you follow Kima Ventures portfolio. Investments source is from www.kimaventures.com",
   "icons": {
     "16": "img/logo_kima_16x16.png",
